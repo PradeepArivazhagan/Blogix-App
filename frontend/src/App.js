@@ -5,6 +5,9 @@ import Footer from "./footer/Footer";
 import Reader from "./reader/Reader";
 import Writer from "./writer/Writer";
 import Viewer from "./viewer/Viewer";
+import dotenv from "dotenv"
+
+dotenv.config()
 
 const App = () => {
   return (
