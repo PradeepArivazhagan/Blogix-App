@@ -13,7 +13,7 @@ app.use("/articles", articlerouter);
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    app.listen(process.env.PORT_NUM, () => {
+    app.listen(process.env.APPLICATION_URL, () => {
       console.log("MongoDB is Connected and Server is Listening");
     });
   })
