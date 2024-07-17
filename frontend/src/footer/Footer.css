@@ -1,0 +1,26 @@
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerText {
+  font-family: "Studio";
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0px;
+}
+
+.socialLinkContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.socialMediaIcon {
+  width: 25px;
+  margin-left: 20px;
+  cursor: pointer;
+}
