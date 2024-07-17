@@ -15,7 +15,7 @@ import dateFormat from "dateformat";
 function Writer() {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
-    Axios.get(`${import.meta.env.FRONTEND_URL}/articles`)
+    Axios.get(`${process.env.FRONTEND_URL}/articles`)
       .then((res) => {
         setArticles(res.data);
       })
@@ -45,7 +45,7 @@ function Writer() {
     setCategory(event.target.value);
   };
   const handleDelete = (id) => {
-    Axios.delete(`${import.meta.env.FRONTEND_URL}/articles/delete/${id}`)
+    Axios.delete(`${process.env.FRONTEND_URL}/articles/delete/${id}`)
       .then(() => {
         alert("Article Deleted");
       })
@@ -57,7 +57,7 @@ function Writer() {
   const addNewArticle = (event) => {
     event.preventDefault();
 
-    Axios.post(`${import.meta.env.FRONTEND_URL}/articles/add`, {
+    Axios.post(`${process.env.FRONTEND_URL}/articles/add`, {
       title: title,
       author: author,
       content: content,
