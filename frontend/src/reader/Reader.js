@@ -15,7 +15,7 @@ const Reader = () => {
   const [articles, setArticles] = useState([]);
   const [searchInput, setSearchInput] = useState([]);
   useEffect(() => {
-    Axios.get(`${process.env.FRONTEND_URL}/articles`)
+    Axios.get("http://localhost:3000/articles")
       .then((res) => {
         setArticles(res.data);
       })

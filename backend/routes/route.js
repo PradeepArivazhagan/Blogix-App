@@ -23,8 +23,8 @@ router.route("/view/:id").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
-  const { title, author, content, category} = req.body;
-  Articles.create({ title, author, content, category})
+  const { title, author, content, category } = req.body;
+  Articles.create({ title, author, content, category })
     .then(() => {
       res.status(200).send("Article Created Successfully!");
     })
@@ -44,4 +44,4 @@ router.route("/delete/:id").delete((req, res) => {
     });
 });
 
-module.exports = router;
+export default router;
