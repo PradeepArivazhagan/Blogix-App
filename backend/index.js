@@ -5,7 +5,7 @@ require("dotenv").config();
 const articlerouter = require("./routes/route");
 
 const app = express();
-app.use(json());
+app.use(express.json());
 app.use(cors());
 
 app.use("/articles", articlerouter);
