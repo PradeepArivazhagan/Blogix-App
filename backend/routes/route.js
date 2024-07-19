@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Articles = require("../model/model");
+const Article = require("../model/model");
 
 router.route("/").get((req, res) => {
-  Articles.find()
+  Article.find()
     .then((article) => {
       res.status(200).json(article);
     })
@@ -13,7 +13,7 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/view/:id").get((req, res) => {
-  Articles.findById()
+  Article.findById()
     .then((article) => {
       res.status(200).json(article);
     })
@@ -24,7 +24,7 @@ router.route("/view/:id").get((req, res) => {
 
 router.route("/add").post((req, res) => {
   const { title, author, content, category } = req.body;
-  Articles.create({ title, author, content, category })
+  Article.create({ title, author, content, category })
     .then(() => {
       res.status(200).send("Article Created Successfully!");
     })
@@ -35,7 +35,7 @@ router.route("/add").post((req, res) => {
 
 router.route("/delete/:id").delete((req, res) => {
   const { id } = req.params;
-  Articles.findByIdAndDelete(id)
+  Article.findByIdAndDelete(id)
     .then(() => {
       res.status(200).send("User Deleted Successfully!");
     })

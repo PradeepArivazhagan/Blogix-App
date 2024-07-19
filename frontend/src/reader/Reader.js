@@ -13,9 +13,9 @@ import { useNavigate } from "react-router-dom";
 const Reader = () => {
   const navigate = useNavigate();
   const [articles, setArticles] = useState([]);
-  const [searchInput, setSearchInput] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
   useEffect(() => {
-    Axios.get("http://localhost:3000/articles")
+    Axios.get("http://localhost:4000/articles")
       .then((res) => {
         setArticles(res.data);
       })
@@ -28,7 +28,7 @@ const Reader = () => {
     const searchInputValue = event.target.value;
     setSearchInput(searchInputValue);
     const searchResult = articles.filter((eachArticle) =>
-      eachArticle.title.toLowerCase().includes(searchInputValue.toLowerCase())
+      eachArticle.title.toLowerCase().includes(searchInput.toLowerCase())
     );
     setArticles(searchResult);
   };
