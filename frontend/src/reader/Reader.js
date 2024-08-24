@@ -22,7 +22,7 @@ const Reader = () => {
       .catch((e) => {
         console.log(e.message);
       });
-  });
+  },[]);
 
   const onSearchChange = (event) => {
     const searchInputValue = event.target.value;
@@ -111,7 +111,7 @@ const Reader = () => {
                   src={bloggingbro}
                   alt="no article"
                 />
-                <h1 className="noArticleText">No Article</h1>
+                <h1 className="noArticleText">No Article Found</h1>
               </Col>
             )}
           </ul>
